@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cnicoj - The Official Repository</title>
+<link rel="icon" type="image/x-icon" href="icon.gif">
+<meta charset="UTF-8">
+<meta name="description" content="cnicoj Music Repository">
+<meta name="keywords" content="Music">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+}
+.background {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+.header {
+  padding: 0px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+footer {
+  text-align: center;
+  padding: 0px;
+  color: white;
+  font-size: 20px;
+}
+</style>
+<link rel="stylesheet" href="/DM2nFNb9UmqWzqDA"/></head>
+
+<div class="header">
+<img src="icon2.gif" 
+     width="100" 
+     height="100" />
+<center>
+<h1> cnicoj - The Official Repository </h1>
+</div> 
+
+ <nav>
+ <center>
+  <a href="/index">Bandcamp Links</a> |
+  <a href="/youtube">YouTube Links</a>
+</nav> 
+
+<body>
+
+<body style="background-color:black;">
+<script src="index.js"></script>
+<section>
+<div class="container">
+<p>  <span id="response"></span> </p> 
+
+
+<h1>Albums</h1>
+<iframe width="400" height="400" src="https://www.youtube.com/embed/5UY3wuyL4Yw?si=8i3ffWXpTdui8YAD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="400" height="400" src="https://www.youtube.com/embed/HrvaJ1tyJC4?si=LTUWEG3OWOt5Yg13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h1>EP's</h1>
+<iframe width="400" height="400" src="https://www.youtube.com/embed/e4BibCCRS0c?si=0DoMlcSj1-ZRim9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="400" height="400" src="https://www.youtube.com/embed/6YEs9wQhvUw?si=x0EHhGWKp5ATV8bp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h1>Singles</h1>
+<iframe width="400" height="400" src="https://www.youtube.com/embed/0ZxD1_1UalU?si=EFMz7I8dul2PieIX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<section>
+<canvas class="background"></canvas>
+<script src="https://npmcdn.com/particlesjs@2.0.0/dist/particles.min.js"></script>
+<script>
+    window.onload = function() { 
+        Particles.init({
+        selector: '.background', 
+        maxParticles: 180,
+        sizeVariations: 3,
+        speed: 0.27,
+        color: '#FFFFFF',
+        minDistance: '100',
+        connectParticles: true
+        });
+    };
+</script> 
+</body>
+
+ <footer>
+<a href="https://www.youtube.com/c/cnicoj" target="_blank"</a>
+<img src="youtube.png" 
+     width="100" 
+     height="100" />
+
+<a href="https://www.cnicoj.bandcamp.com" target="_blank"</a>
+<img src="bandcamp.png" 
+     width="100" 
+     height="100" />
+</a>
+</footer> 
+</html>
