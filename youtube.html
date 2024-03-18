@@ -51,17 +51,20 @@ footer {
 
  <nav>
  <center>
-  <a href="/index">Bandcamp Links</a> |
-  <a href="/youtube">YouTube Links</a>
+  <a href="/index.html">Bandcamp Links</a> |
+  <a href="/youtube.html">YouTube Links</a>
 </nav> 
 
 <body>
-
+    <script type="application/javascript">
+  function getIP(json) {
+    document.write("Your public IP address is: ", json.ip);
+  }
+</script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 <body style="background-color:black;">
-<script src="index.js"></script>
 <section>
 <div class="container">
-<p>  <span id="response"></span> </p> 
 
 <center>
 <h1>Albums</h1>
