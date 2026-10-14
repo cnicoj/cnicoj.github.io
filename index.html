@@ -1,1 +1,1666 @@
-<meta http-equiv="Refresh" content="0; url='https://cnicoj.bandcamp.com'" />
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#202020">
+<meta name="color-scheme" content="dark">
+<title>cnicoj.com</title>
+
+<style>
+  /* Montserrat, bundled with the site (fonts/ folder) so it loads with no outside requests.
+     Licensed under the SIL Open Font License (fonts/Montserrat-OFL-LICENSE.txt). */
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 300; font-display: swap;
+    src: url('fonts/montserrat-latin-300-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url('fonts/montserrat-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap;
+    src: url('fonts/montserrat-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap;
+    src: url('fonts/montserrat-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 300; font-display: swap;
+    src: url('fonts/montserrat-latin-ext-300-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url('fonts/montserrat-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap;
+    src: url('fonts/montserrat-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap;
+    src: url('fonts/montserrat-latin-ext-700-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 300; font-display: swap;
+    src: url('fonts/montserrat-cyrillic-300-normal.woff2') format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url('fonts/montserrat-cyrillic-400-normal.woff2') format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap;
+    src: url('fonts/montserrat-cyrillic-500-normal.woff2') format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+  @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap;
+    src: url('fonts/montserrat-cyrillic-700-normal.woff2') format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+
+  :root {
+    --bg: #202020;   /* page background */
+    --text: #e6e6e6;
+    --muted: #6e6e6e;
+    --faint: #3a3a3a;
+    --font: "Montserrat", system-ui, "Segoe UI", sans-serif;   /* the one font used everywhere */
+    --gap: 18px;            /* space between covers, side to side */
+    --ease: cubic-bezier(.22,.8,.24,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-weight: 300;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+  button, input, select, textarea { font-family: inherit; }
+  .player, .player *, .dock, .dock * { font-family: var(--font); }
+
+  /* ── Background: your logo, large on the right, warping with the cursor ──
+     Drawn by the graphics card. The plain image is a fallback for browsers
+     without WebGL. */
+  :root {
+    --logo-size: min(78vh, 46vw);
+    --logo-x: 84vw;             /* horizontal center of the logo (it bleeds a little off the right edge) */
+    --logo-opacity: 0.16;       /* how bold the logo is (fallback image; the live one uses LOGO_ALPHA) */
+  }
+  .bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .bg-logo {
+    position: absolute;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    left: calc(var(--logo-x) - var(--logo-size) / 2);
+    top: calc(50vh - var(--logo-size) / 2);
+    opacity: var(--logo-opacity);
+    will-change: transform;
+  }
+  .bg.live .bg-logo { visibility: hidden; }   /* kept for measuring position */
+
+  /* ── Background readout: cursor coordinates + details from the visitor's browser ──
+     Same softness and opacity as the logo. Nothing here is sent anywhere. */
+  .readout {
+    position: fixed;
+    z-index: 0;
+    left: 6vw;
+    top: calc(64px + 3vh);              /* just below the header */
+    pointer-events: none;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.14);   /* noticeable, but stays in the background */
+    filter: blur(0.3px);
+    font-family: var(--font);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  .readout .xy, .readout .info span { white-space: pre; }
+  .readout .xy {
+    font-size: clamp(16px, 1.7vw, 26px);
+    line-height: 1.3;
+  }
+  .readout .info {
+    margin-top: 1.2vh;
+    font-size: clamp(10px, 0.75vw, 12px);
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: max-content;   /* one column */
+  }
+  @media (max-width: 640px) {
+    .readout { left: 16px; top: calc(64px + 1.5vh); }
+    .readout .info { font-size: 10px; }
+  }
+  @media (max-width: 640px) {
+    :root { --logo-size: min(70vh, 95vw); --logo-x: 70vw; --logo-opacity: 0.11; }
+  }
+
+  /* ── Landing ───────────────────────────── */
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 16px max(12vh, 80px);
+    text-align: center;
+  }
+
+  section:not([hidden]) ~ section:not([hidden]) { margin-top: 60px; }   /* space between groups on the same page */
+
+  /* Group headings: white small caps, lined up with the left edge of the
+     group's first row of covers (the indent is measured by the script). */
+  .label {
+    text-align: left;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-variant-caps: small-caps;   /* first letters full capitals, the rest smaller capitals */
+    color: #fff;
+    margin-bottom: 22px;
+    padding-left: var(--label-indent, 0px);
+  }
+
+  /* Each group is a block centered on the page; inside it, covers start from the left.
+     The block's width (a whole number of columns) is set by the script. */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: var(--gap);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(-1 * var(--row-gap));
+  }
+
+  :root { --row-gap: 30px; }   /* space between rows of covers */
+
+  /* Invisible line breaks used to keep each row's tiles together while a release is open */
+  .row-break { flex-basis: 100%; height: 0; }
+
+  /* All groups use the same, medium cover size */
+  section[data-type] { --w: 220px; }
+
+  .item {
+    position: relative;
+    width: var(--w);
+    margin-bottom: var(--row-gap);
+  }
+
+  .card {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;                      /* titles and years line up with the cover's left edge */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card .art {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #0a0a0a;
+    /* Selection ring: drawn just outside the cover, invisible until hover */
+    outline: 2px solid rgba(255, 255, 255, 0);
+    outline-offset: 2px;
+    transition: outline-color 0.3s ease, outline-offset 0.35s cubic-bezier(.2,.7,.2,1);
+  }
+
+  .card .art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Hover (or keyboard focus) draws the ring; it stays on the release that's open. */
+  .card:hover .art,
+  .card:focus-visible .art,
+  .item.open .card .art {
+    outline-color: rgba(255, 255, 255, 0.85);
+    outline-offset: 6px;
+  }
+
+  .card:focus-visible { outline: none; }
+
+  /* One title size for every release, picked by the script so the longest title
+     still fits on one line under its cover. */
+  .card .title {
+    margin-top: 10px;
+    font-size: var(--title-size, 13px);
+    font-weight: 400;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  main.titles-wrap .card .title { white-space: normal; }   /* phones, if one line would be too small to read */
+
+  .card .year {
+    margin-top: 1px;
+    font-size: var(--title-size, 13px);   /* same size as the titles */
+    color: var(--text);                    /* same white as the titles */
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Releases without an embed yet: shown, but not clickable */
+  .card[disabled] { cursor: default; }
+  .card[disabled]:hover .art { outline-color: rgba(255, 255, 255, 0); outline-offset: 2px; }
+
+
+  /* ── Opened release: the player sits in the row, right of the cover ── */
+
+  .item.open {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+    width: auto;
+  }
+  .item.open .card { width: var(--w); flex: 0 0 auto; }
+
+  /* The player is a drawer: the outer box is a window at the cover's edge,
+     the inner panel slides out through it. */
+  :root {
+    --drawer-time: 0.6s;
+    --drawer-ease: cubic-bezier(.65,.05,.25,1);
+  }
+
+  .embed {
+    flex: 0 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .embed-inner {
+    background: var(--bg);                 /* same as the page, so there's no visible box */
+    border-radius: 4px;
+    animation: drawer-out var(--drawer-time) var(--drawer-ease) 0.06s both;
+  }
+
+  .embed iframe {
+    display: block;
+    border: 0;
+    max-width: 100%;
+    background: transparent;
+    border-radius: 4px;
+    opacity: 0;
+    filter: grayscale(1);                  /* strips any leftover Bandcamp color */
+    transition: opacity 0.4s ease;
+  }
+  .embed iframe.loaded { opacity: 1; }
+
+  @keyframes drawer-out {
+    0%   { transform: translateX(-102%); opacity: 0; }
+    35%  { opacity: 1; }
+    100% { transform: none; opacity: 1; }
+  }
+
+  /* Closing: the panel slides back in behind the cover, then disappears. */
+  .embed.leaving {
+    position: absolute;
+    top: 0;
+    left: calc(var(--w) + var(--gap));
+    pointer-events: none;
+  }
+  .embed.leaving .embed-inner {
+    animation: drawer-in 0.38s cubic-bezier(.55,0,.75,.2) both;
+  }
+  @keyframes drawer-in {
+    0%   { transform: none; opacity: 1; }
+    70%  { opacity: 1; }
+    100% { transform: translateX(-102%); opacity: 0; }
+  }
+
+  /* ── Custom player (inside the drawer) ── */
+  .player {
+    width: 400px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text);
+    padding: 2px 4px 4px;
+  }
+  .p-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .p-name { color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .p-meta { color: var(--text); white-space: nowrap; }
+  .p-buy { margin-left: auto; color: var(--text); text-decoration: underline; text-underline-offset: 3px;
+           text-decoration-color: rgba(255,255,255,0.35); white-space: nowrap; transition: color 0.2s ease; }
+  .p-buy:hover, .p-buy:focus-visible { color: #fff; text-decoration-color: #fff; outline: none; }
+
+  .p-controls { display: flex; align-items: center; gap: 4px; padding: 12px 0 2px; }
+  .p-btn {
+    width: 28px; height: 28px;
+    display: grid; place-items: center;
+    background: none; border: 0; border-radius: 4px;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .p-btn:hover, .p-btn:focus-visible { background: rgba(255, 255, 255, 0.06); color: #fff; outline: none; }
+  .p-btn svg { width: 12px; height: 12px; fill: currentColor; }
+  .p-btn.play svg { width: 14px; height: 14px; }
+  .p-time { margin-left: auto; color: var(--text); font-variant-numeric: tabular-nums; }
+
+  /* seek bar: thin line, fills as the track plays; click or drag to jump */
+  .p-seek { position: relative; height: 16px; cursor: pointer; touch-action: none; }
+  .p-seek::before, .p-seek .fill {
+    content: ""; position: absolute; left: 0; top: 50%; height: 2px; margin-top: -1px; border-radius: 1px;
+  }
+  .p-seek::before { right: 0; background: rgba(255, 255, 255, 0.12); }
+  .p-seek .fill { width: var(--p, 0%); background: var(--text); }
+  .p-seek .knob {
+    position: absolute; top: 50%; left: var(--p, 0%);
+    width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%;
+    background: #fff; opacity: 0; transition: opacity 0.15s ease;
+  }
+  .p-seek:hover .knob, .p-seek.dragging .knob { opacity: 1; }
+  .player:not(.is-current) .p-seek { opacity: 0.35; pointer-events: none; }
+
+  .p-list {
+    list-style: none;
+    margin-top: 6px;
+    max-height: 330px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+  .p-list button {
+    display: grid;
+    grid-template-columns: 2.4em 1fr auto;
+    gap: 8px;
+    width: 100%;
+    padding: 5px 6px;
+    background: none; border: 0; border-radius: 3px;
+    font: inherit; text-align: left;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .p-list button:hover, .p-list button:focus-visible { background: rgba(255, 255, 255, 0.05); color: #fff; outline: none; }
+  .p-list .n { color: var(--text); font-variant-numeric: tabular-nums; }
+  .p-list .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .p-list .d { color: var(--text); font-variant-numeric: tabular-nums; }
+  .p-list .current button { color: #fff; }
+  .p-list .current .n { color: #fff; }
+  .p-list .failed .t { text-decoration: line-through; }
+
+  /* little "now playing" bars in place of the track number */
+  .eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
+  .eq i { width: 2px; height: 100%; background: currentColor; transform-origin: bottom; animation: eq 0.9s ease-in-out infinite; }
+  .eq i:nth-child(2) { animation-delay: -0.3s; }
+  .eq i:nth-child(3) { animation-delay: -0.6s; }
+  .paused .eq i { animation-play-state: paused; }
+  @keyframes eq { 0%, 100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
+
+  /* ── Full players: every release in the group, stacked under the cover grid ── */
+  .full-list {
+    width: var(--block-w, min(934px, calc(100% - 32px)));
+    margin: 72px auto 0;
+    text-align: left;
+  }
+  .release-full {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 48px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    scroll-margin-top: 88px;             /* lands just below the pinned header */
+  }
+  .release-full .rf-art {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 3px;
+    background: #0a0a0a;
+    outline: 2px solid rgba(255, 255, 255, 0);
+    outline-offset: 6px;
+    transition: outline-color 0.6s ease;
+  }
+  .release-full.flash .rf-art { outline-color: rgba(255, 255, 255, 0.85); transition-duration: 0.2s; }
+  .player.full { width: auto; font-size: 13px; padding: 0; }
+  .player.full .p-head { flex-wrap: wrap; row-gap: 4px; padding-bottom: 14px; }
+  .player.full .p-name { font-size: 20px; white-space: normal; flex-basis: 100%; }
+  .player.full .p-buy { margin-left: auto; }
+  .player.full .p-list { max-height: none; overflow: visible; margin-top: 10px; }
+  .player.full .p-list button { padding: 6px 8px; }
+  .release-full .embed-fallback iframe { display: block; border: 0; width: 100%; filter: grayscale(1); }
+  @media (max-width: 640px) {
+    .full-list { width: auto; margin-top: 56px; }
+    .release-full { grid-template-columns: 1fr; gap: 20px; padding: 32px 0; }
+    .release-full .rf-art { width: min(100%, 360px); }
+    .player.full .p-name { font-size: 17px; }
+  }
+
+  /* ── Now-playing bar: appears when music is playing but its panel is closed ── */
+  /* ── Bottom dock: waveform of the playing track (+ a now-playing row when its player
+     is scrolled away). It sticks to the bottom of the screen while you scroll and comes
+     to rest just above the footer at the end of the page. */
+  .dock {
+    position: sticky;
+    bottom: 0;
+    z-index: 6;
+    display: none;
+    background: rgba(32, 32, 32, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .dock.on { display: block; animation: dock-in 0.45s var(--ease) both; }
+  @keyframes dock-in { from { transform: translateY(100%); opacity: 0; } }
+  .dock-inner {
+    width: var(--block-w, min(934px, calc(100% - 32px)));
+    margin: 0 auto;
+    padding: 8px 0 max(10px, env(safe-area-inset-bottom));
+  }
+  .now-bar { display: none; align-items: center; gap: 6px; font-size: 12px; padding-bottom: 6px; }
+  .now-bar.show { display: flex; }
+  .now-bar .what {
+    flex: 1; min-width: 0;
+    background: none; border: 0; padding: 0 4px; font: inherit; text-align: left; color: var(--text);
+    cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .now-bar .what span { color: var(--muted); }
+  .now-bar .what:hover, .now-bar .what:focus-visible { color: #fff; outline: none; }
+  .now-bar .p-time { margin: 0 4px; }
+  .wave { display: block; width: 100%; height: 34px; cursor: pointer; touch-action: none; }
+
+  @media (max-width: 640px) {
+    .player { width: 100%; padding: 2px 0 4px; }
+    .p-list { max-height: 50vh; }
+  }
+
+  /* ── Header: logo (home) + tabs, pinned to the top while scrolling ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(32, 32, 32, 0.86);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  .site-header.scrolled { border-bottom-color: rgba(255, 255, 255, 0.07); }
+  .site-header .inner {
+    width: var(--block-w, min(934px, calc(100% - 32px)));   /* same width and left edge as the covers */
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .site-header .brand { display: block; flex: 0 0 auto; line-height: 0; }
+  .site-header .brand img { width: 32px; height: 32px; display: block; }
+  .site-header nav { display: flex; gap: 24px; }
+  .site-header nav a {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-variant-caps: small-caps;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+  .site-header nav a:hover, .site-header nav a:focus-visible { color: #cfcfcf; outline: none; }
+  .site-header nav a[aria-current="page"] { color: #fff; }
+  .site-header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease);
+  }
+  .site-header nav a[aria-current="page"]::after { transform: scaleX(1); }
+
+  /* ── Footer: only shows once you've scrolled all the way down ── */
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 8px 16px max(56px, env(safe-area-inset-bottom));
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.7s var(--ease);
+    pointer-events: none;
+  }
+  .site-footer.show { opacity: 1; transform: none; pointer-events: auto; }
+  .site-footer .text {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .site-footer .links { color: var(--text); }
+  .site-footer .links a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    transition: text-decoration-color 0.2s ease;
+  }
+  .site-footer .links a:hover,
+  .site-footer .links a:focus-visible { text-decoration-color: currentColor; outline: none; }
+  .site-footer .links .sep { color: var(--muted); margin: 0 0.5em; }
+  .site-footer .icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 640px) {
+    :root { --gap: 16px; }
+    main { padding-top: 56px; }
+    section[data-type] { --w: calc(50% - var(--gap) / 2); }
+    :root { --row-gap: 26px; }
+    /* Phones: no room beside the cover, so the player opens underneath it */
+    .item.open { width: 100%; flex-direction: column; align-items: center; gap: 14px; }
+    .embed { width: 100%; display: flex; justify-content: center; }
+    .embed.leaving { left: 0; top: 100%; width: 100%; display: flex; justify-content: center; }
+    @keyframes drawer-out {
+      0%   { transform: translateY(-102%); opacity: 0; }
+      35%  { opacity: 1; }
+      100% { transform: none; opacity: 1; }
+    }
+    @keyframes drawer-in {
+      0%   { transform: none; opacity: 1; }
+      100% { transform: translateY(-102%); opacity: 0; }
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="bg" id="bg" aria-hidden="true">
+  <canvas id="bg-canvas"></canvas>
+  <img class="bg-logo" id="bg-logo" src="logo.png" alt="">
+</div>
+
+<div class="readout" id="readout" aria-hidden="true">
+  <div class="xy" id="ro-xy">0.00000, 0.00000</div>
+  <div class="info" id="ro-info"></div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="inner">
+    <a class="brand" href="#" data-tab="new" aria-label="Home: new releases"><img src="logo.png" alt="cnicoj"></a>
+    <nav aria-label="Discography">
+      <a href="#albums" data-tab="album">Albums</a>
+      <a href="#eps" data-tab="ep">EPs</a>
+      <a href="#singles" data-tab="single">Singles</a>
+    </nav>
+  </div>
+</header>
+
+<main id="discography"></main>
+
+<div class="dock" id="dock" role="region" aria-label="Now playing">
+  <div class="dock-inner">
+    <div class="now-bar" id="now-bar" role="region" aria-label="Now playing">
+      <button class="p-btn play" data-act="toggle" aria-label="Play or pause"></button>
+      <button class="what" data-act="show" title="Show this release"></button>
+      <span class="p-time"></span>
+      <button class="p-btn" data-act="next" aria-label="Next track"></button>
+      <button class="p-btn" data-act="stop" aria-label="Stop"></button>
+    </div>
+    <canvas class="wave" id="wave" aria-label="Waveform, click to seek"></canvas>
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer">
+  <div class="text">
+    <div>official cnicoj repository for music and content</div>
+    <div class="links">
+      <a id="link-youtube" href="#" target="_blank" rel="noopener">youtube</a><span class="sep">-</span><a id="link-instagram" href="#" target="_blank" rel="noopener">instagram</a>
+    </div>
+  </div>
+  <img class="icon" src="icon.png" alt="cnicoj">
+</footer>
+
+
+
+<script src="releases.js"></script>
+<script src="tracks.js"></script>
+<script src="peaks.js"></script>
+<script src="logo-data.js"></script>
+
+<script>
+(function () {
+  const GROUPS = [
+    { type: "new",    label: "New Releases" },   // picked by title in releases.js (NEW_RELEASES)
+    { type: "album",  label: "Albums"  },
+    { type: "ep",     label: "EPs"     },
+    { type: "single", label: "Singles" }
+  ];
+  const TYPE_NAMES = { album: "Album", ep: "EP", single: "Single" };
+  const PLAYER_WIDTH = 400; // used when an embed's width is a percentage (e.g. width: 100%)
+
+  const list = (typeof RELEASES !== "undefined" ? RELEASES : []).map((r, i) => ({
+    ...r,
+    type: String(r.type || "").toLowerCase(),
+    slug: slugify(r.title || "release-" + i)
+  }));
+  const bySlug = Object.fromEntries(list.map(r => [r.slug, r]));
+
+  const main = document.getElementById("discography");
+  let current = null; // the open .item
+
+  // ── Helpers ────────────────────────────
+
+  function slugify(s) {
+    return String(s).toLowerCase().normalize("NFKD")
+      .replace(/[^\w\s-]/g, "").trim().replace(/[\s_]+/g, "-") || "release";
+  }
+
+  function esc(s) {
+    return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  // Quiet, dark gradient placeholder unique to each title.
+  function placeholder(seed) {
+    let h = 0;
+    for (const c of String(seed)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    const hue = h % 360, hue2 = (hue + 40 + (h >> 8) % 60) % 360;
+    const x = 25 + (h >> 4) % 50, y = 25 + (h >> 12) % 50;
+    const svg =
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">` +
+      `<defs><radialGradient id="g" cx="${x}%" cy="${y}%" r="75%">` +
+      `<stop offset="0" stop-color="hsl(${hue},28%,22%)"/>` +
+      `<stop offset=".55" stop-color="hsl(${hue2},22%,9%)"/>` +
+      `<stop offset="1" stop-color="hsl(${hue2},15%,4%)"/></radialGradient></defs>` +
+      `<rect width="400" height="400" fill="url(#g)"/>` +
+      `<circle cx="200" cy="200" r="64" fill="none" stroke="hsl(${hue},20%,40%)" stroke-opacity=".18"/>` +
+      `</svg>`;
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+  }
+
+  function artFor(r) { return r.art ? r.art : placeholder(r.title); }
+
+  // Bandcamp player colors: whatever colors an embed was copied with, the site swaps in
+  // its own, so every player sits flush with the page. Bandcamp picks light text by itself
+  // on a dark background.
+  const EMBED_BG   = "202020";   // player background (same as the page)
+  const EMBED_LINK = "e6e6e6";   // play button, progress bar and links (soft white instead of blue)
+  function themeEmbed(src) {
+    const set = (url, key, val) => new RegExp(`/${key}=[^/]*`, "i").test(url)
+      ? url.replace(new RegExp(`/${key}=[^/]*`, "i"), `/${key}=${val}`)
+      : url.replace(/\/?$/, `/${key}=${val}/`);
+    return set(set(src, "bgcol", EMBED_BG), "linkcol", EMBED_LINK);
+  }
+
+  // Reads the Bandcamp embed exactly as you set it up on Bandcamp.
+  // Accepts the full <iframe> code, just the EmbeddedPlayer URL, or a bare "album=123" / "track=123".
+  function parseEmbed(raw) {
+    raw = String(raw || "").trim();
+    if (!raw) return null;
+
+    let src = null, width = null, height = null;
+
+    if (/<iframe/i.test(raw)) {
+      const s = raw.match(/src\s*=\s*["']([^"']+)["']/i);
+      src = s && s[1];
+      const style = (raw.match(/style\s*=\s*["']([^"']*)["']/i) || [])[1] || "";
+      width  = (style.match(/(?:^|;)\s*width\s*:\s*([^;]+)/i)  || [])[1] || (raw.match(/\swidth\s*=\s*["']?([\d.]+%?)/i)  || [])[1];
+      height = (style.match(/(?:^|;)\s*height\s*:\s*([^;]+)/i) || [])[1] || (raw.match(/\sheight\s*=\s*["']?([\d.]+%?)/i) || [])[1];
+    } else if (/^https?:\/\//i.test(raw)) {
+      src = raw;
+    } else {
+      const m = raw.match(/(album|track)=\d+/);
+      if (m) src = "https://bandcamp.com/EmbeddedPlayer/" + m[0] + "/size=large/bgcol=000000/linkcol=ffffff/artwork=none/transparent=true/";
+    }
+
+    if (!src || !/^https:\/\/bandcamp\.com\/EmbeddedPlayer\//i.test(src)) return null;
+    src = themeEmbed(src);
+
+    const norm = v => {
+      if (!v) return null;
+      v = String(v).trim();
+      return /^\d+(\.\d+)?$/.test(v) ? v + "px" : v;
+    };
+    width = norm(width);
+    if (!width || /%$/.test(width)) width = PLAYER_WIDTH + "px";
+    return { src, width, height: norm(height) || "400px" };
+  }
+
+  // ── Landing ────────────────────────────
+
+  // "New Releases" shows the titles listed in NEW_RELEASES (releases.js), in that order.
+  // They are copies: each release still appears in its own group too.
+  function newReleases() {
+    const wanted = typeof NEW_RELEASES !== "undefined" ? NEW_RELEASES : [];
+    const norm = t => String(t || "").trim().toLowerCase();
+    return wanted.map(t => list.find(r => norm(r.title) === norm(t))).filter(Boolean);
+  }
+
+  function render() {
+    main.innerHTML = GROUPS.map(g => {
+      const items = g.type === "new" ? newReleases() : list.filter(r => r.type === g.type)
+        .sort((a, b) => (b.year || 0) - (a.year || 0));
+      if (!items.length) return "";
+      return `
+        <section data-type="${g.type}">
+          <h2 class="label">${g.label}</h2>
+          <div class="grid">
+            ${items.map(r => {
+              const ready = !!(tracksFor(r) || parseEmbed(r.bandcamp));
+              return `
+              <div class="item" data-slug="${r.slug}">
+                <button class="card" ${ready ? `aria-expanded="false"` : "disabled"}
+                  aria-label="${esc(r.title)}, ${esc(TYPE_NAMES[r.type])}${r.year ? ", " + r.year : ""}">
+                  <div class="art"><img src="${esc(artFor(r))}" alt="" loading="lazy" decoding="async"></div>
+                  <div class="title">${esc(r.title)}</div>
+                  ${r.year ? `<div class="year">${esc(r.year)}</div>` : ""}
+                </button>
+              </div>`;
+            }).join("")}
+          </div>
+          <div class="full-list">
+            ${items.map(r => `
+              <article class="release-full" data-slug="${r.slug}" aria-label="${esc(String(r.title).trim())}">
+                <img class="rf-art" src="${esc(artFor(r))}" alt="${esc(String(r.title).trim())} cover" loading="lazy" decoding="async">
+                <div class="rf-body"></div>
+              </article>`).join("")}
+          </div>
+        </section>`;
+    }).join("");
+    // load each release's full player into its slot
+    main.querySelectorAll(".release-full").forEach(a => {
+      const r = bySlug[a.dataset.slug], body = a.querySelector(".rf-body");
+      if (tracksFor(r)) body.appendChild(buildPlayer(r, { full: true }));
+      else {
+        const e = parseEmbed(r.bandcamp);
+        if (e) body.innerHTML = `<div class="embed-fallback"><iframe src="${esc(e.src)}" style="height:${esc(e.height)}" seamless title="${esc(r.title)} on Bandcamp"></iframe></div>`;
+      }
+    });
+  }
+
+  // ── Opening a release ──────────────────
+  // The player is placed in the row right after the cover. Everything after it
+  // scoots along (wrapping to the next row when it runs out of room), animated.
+
+  // Animations always play, even when the computer is set to reduce motion.
+  const MOTION = true;
+  const MOVE_MS = 580;
+  const EASE = "cubic-bezier(.65,.05,.25,1)";   // eases in and out, so the movement reads clearly
+
+  // Every tile glides from where it was to where it ends up. Tiles further along
+  // the row leave a beat later than the ones right next to the opened release.
+  function slide(change, focus) {
+    if (!MOTION) { change(); return; }
+    const movers = [...main.querySelectorAll(".item, .label")];
+    const before = new Map(movers.map(el => [el, el.getBoundingClientRect()]));
+    change();
+    const siblings = focus ? [...focus.parentElement.children] : [];
+    const start = siblings.indexOf(focus);
+    for (const el of movers) {
+      const a = before.get(el), b = el.getBoundingClientRect();
+      const dx = a.left - b.left, dy = a.top - b.top;
+      el.getAnimations().forEach(x => x.id === "slide" && x.cancel());
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) continue;
+      const i = siblings.indexOf(el);
+      const delay = i > start && start >= 0 ? Math.min((i - start - 1) * 30, 120) : 0;
+      const anim = el.animate(
+        [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }],
+        { duration: MOVE_MS, easing: EASE, delay, fill: "backwards" }
+      );
+      anim.id = "slide";
+    }
+  }
+
+  // ── Custom player ──────────────────────
+  // Plays your own MP3s (listed in tracks.js, loaded from AUDIO_BASE). One shared audio
+  // element, so music keeps playing when a panel closes or you switch pages; the
+  // now-playing bar at the bottom takes over then.
+  const ICON = {
+    play:  '<svg viewBox="0 0 12 12"><path d="M2.5 1.2v9.6L10.5 6z"/></svg>',
+    pause: '<svg viewBox="0 0 12 12"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>',
+    prev:  '<svg viewBox="0 0 12 12"><path d="M1.5 1.5h1.6v9H1.5zM10.5 1.5v9L3.6 6z"/></svg>',
+    next:  '<svg viewBox="0 0 12 12"><path d="M8.9 1.5h1.6v9H8.9zM1.5 1.5v9L8.4 6z"/></svg>',
+    stop:  '<svg viewBox="0 0 12 12"><path d="M2.6 1.6 6 5 9.4 1.6l1 1L7 6l3.4 3.4-1 1L6 7l-3.4 3.4-1-1L5 6 1.6 2.6z"/></svg>'
+  };
+  const audio = new Audio();
+  audio.preload = "metadata";
+  const players = new Set();            // player panels currently on the page
+  const onScreen = new Set();            // the ones actually visible right now
+  const seen = new IntersectionObserver(entries => {
+    for (const e of entries) { if (e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); }
+    updateBar();
+  }, { threshold: 0.12 });
+  let now = null;                        // { r, entry, i } — what's loaded
+  const failed = new Set();              // "slug:index" of tracks that couldn't load
+
+  function tracksFor(r) {
+    if (typeof TRACKS === "undefined" || !r) return null;
+    const e = TRACKS[String(r.title).trim()];
+    return e && e.tracks && e.tracks.length ? e : null;
+  }
+  function trackUrl(entry, t) {
+    const base = typeof AUDIO_BASE !== "undefined" ? AUDIO_BASE : "audio/";
+    return base + entry.folder.split("/").map(encodeURIComponent).join("/") + "/" + encodeURIComponent(t.file);
+  }
+  function bandcampUrl(r) {
+    const m = String(r.bandcamp || "").match(/href\s*=\s*["'](https:\/\/[^"']*bandcamp\.com[^"']*)["']/i);
+    return m ? m[1] : null;
+  }
+  const clock = s => {
+    s = Math.max(0, Math.floor(s || 0));
+    const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60, sec = String(s % 60).padStart(2, "0");
+    return h ? `${h}:${String(m).padStart(2, "0")}:${sec}` : `${m}:${sec}`;
+  };
+
+  function play(r, i) {
+    const entry = tracksFor(r);
+    if (!entry || !entry.tracks[i]) return;
+    now = { r, entry, i };
+    audio.src = trackUrl(entry, entry.tracks[i]);
+    audio.play().catch(() => {});
+    setMediaSession();
+    update();
+  }
+  function toggle() {
+    if (!now) return;
+    if (audio.paused) audio.play().catch(() => {}); else audio.pause();
+  }
+  function step(d) {
+    if (!now) return;
+    if (d < 0 && audio.currentTime > 3) { audio.currentTime = 0; return; }
+    const j = now.i + d;
+    if (j >= 0 && j < now.entry.tracks.length) play(now.r, j);
+    else if (d < 0) audio.currentTime = 0;
+  }
+  function stop() {
+    audio.pause();
+    audio.removeAttribute("src"); audio.load();
+    now = null;
+    if ("mediaSession" in navigator) navigator.mediaSession.metadata = null;
+    update();
+  }
+
+  audio.addEventListener("ended", () => {
+    if (now && now.i + 1 < now.entry.tracks.length) play(now.r, now.i + 1);
+    else { audio.currentTime = 0; update(); }       // end of the release: stop at the start
+  });
+  audio.addEventListener("error", () => {
+    if (!now || !audio.getAttribute("src")) return;
+    failed.add(now.r.slug + ":" + now.i);
+    update();
+  });
+  ["play", "pause", "loadedmetadata", "durationchange"].forEach(ev => audio.addEventListener(ev, update));
+  let tickQueued = false;
+  audio.addEventListener("timeupdate", () => {
+    if (tickQueued) return;
+    tickQueued = true;
+    requestAnimationFrame(() => { tickQueued = false; updateProgress(); });
+  });
+
+  function buildPlayer(r, opts = {}) {
+    const entry = tracksFor(r);
+    const total = entry.tracks.reduce((a, t) => a + (t.duration || 0), 0);
+    const buy = bandcampUrl(r);
+    const el = document.createElement("div");
+    el.className = "player" + (opts.full ? " full" : "");
+    el.dataset.slug = r.slug;
+    el.innerHTML = `
+      <div class="p-head">
+        <span class="p-name">${esc(String(r.title).trim())}</span>
+        <span class="p-meta">${opts.full && r.year ? esc(r.year) + " · " : ""}${entry.tracks.length === 1 ? "1 track" : entry.tracks.length + " tracks"} · ${clock(total)}</span>
+        ${buy ? `<a class="p-buy" href="${esc(buy)}" target="_blank" rel="noopener">download or purchase on bandcamp ↗</a>` : ""}
+      </div>
+      <div class="p-controls">
+        <button class="p-btn" data-act="prev" aria-label="Previous track">${ICON.prev}</button>
+        <button class="p-btn play" data-act="toggle" aria-label="Play">${ICON.play}</button>
+        <button class="p-btn" data-act="next" aria-label="Next track">${ICON.next}</button>
+        <span class="p-time">0:00 / ${clock(entry.tracks[0].duration)}</span>
+      </div>
+      <div class="p-seek" role="slider" aria-label="Seek" tabindex="0"><div class="fill"></div><div class="knob"></div></div>
+      <ol class="p-list">
+        ${entry.tracks.map((t, i) => `
+          <li data-i="${i}"><button>
+            <span class="n">${String(i + 1).padStart(2, "0")}</span>
+            <span class="t">${esc(t.title)}</span>
+            <span class="d">${clock(t.duration)}</span>
+          </button></li>`).join("")}
+      </ol>`;
+
+    const mine = () => now && now.r.slug === r.slug;
+    el.addEventListener("click", e => {
+      const row = e.target.closest(".p-list li");
+      if (row) { const i = +row.dataset.i; if (mine() && now.i === i) toggle(); else play(r, i); return; }
+      const act = e.target.closest("[data-act]")?.dataset.act;
+      if (!act) return;
+      if (act === "toggle") { if (mine()) toggle(); else play(r, 0); }
+      else if (act === "next") { if (mine()) step(1); else play(r, 0); }
+      else if (act === "prev") { if (mine()) step(-1); else play(r, 0); }
+    });
+
+    // seeking: click or drag along the line (and arrow keys when it's focused)
+    const seek = el.querySelector(".p-seek");
+    const seekTo = x => {
+      if (!mine() || !isFinite(audio.duration)) return;
+      const b = seek.getBoundingClientRect();
+      audio.currentTime = Math.min(Math.max((x - b.left) / b.width, 0), 1) * audio.duration;
+      updateProgress();
+    };
+    seek.addEventListener("pointerdown", e => { seek.setPointerCapture(e.pointerId); seek.classList.add("dragging"); seekTo(e.clientX); });
+    seek.addEventListener("pointermove", e => { if (seek.classList.contains("dragging")) seekTo(e.clientX); });
+    const endDrag = () => seek.classList.remove("dragging");
+    seek.addEventListener("pointerup", endDrag); seek.addEventListener("pointercancel", endDrag);
+    seek.addEventListener("keydown", e => {
+      if (!mine()) return;
+      if (e.key === "ArrowRight") { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5); e.preventDefault(); }
+      if (e.key === "ArrowLeft")  { audio.currentTime = Math.max(0, audio.currentTime - 5); e.preventDefault(); }
+    });
+
+    players.add(el);
+    seen.observe(el);
+    requestAnimationFrame(update);
+    return el;
+  }
+
+  // keep every visible player + the bar in sync with what's playing
+  function update() {
+    const playing = now && !audio.paused;
+    for (const el of players) {
+      if (!el.isConnected) { players.delete(el); continue; }
+      const mine = now && now.r.slug === el.dataset.slug;
+      el.classList.toggle("is-current", !!mine);
+      el.classList.toggle("paused", !playing);
+      const btn = el.querySelector('[data-act="toggle"]');
+      btn.innerHTML = mine && playing ? ICON.pause : ICON.play;
+      btn.setAttribute("aria-label", mine && playing ? "Pause" : "Play");
+      el.querySelectorAll(".p-list li").forEach(li => {
+        const i = +li.dataset.i, cur = mine && now.i === i;
+        li.classList.toggle("current", !!cur);
+        li.classList.toggle("failed", failed.has(el.dataset.slug + ":" + i));
+        const n = li.querySelector(".n");
+        const want = cur ? '<span class="eq"><i></i><i></i><i></i></span>' : String(i + 1).padStart(2, "0");
+        if (n.innerHTML !== want) n.innerHTML = want;
+      });
+    }
+    updateBar();
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const d = now ? (isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration) : 0;
+    const t = now ? audio.currentTime : 0;
+    const p = d ? Math.min(100, t / d * 100) + "%" : "0%";
+    for (const el of players) {
+      if (!el.isConnected) continue;
+      const mine = now && now.r.slug === el.dataset.slug;
+      const entry = tracksFor(bySlug[el.dataset.slug]);
+      el.querySelector(".p-time").textContent = mine ? `${clock(t)} / ${clock(d)}` : `0:00 / ${clock(entry.tracks[0].duration)}`;
+      el.querySelector(".p-seek").style.setProperty("--p", mine ? p : "0%");
+    }
+    drawWave();
+    bar.querySelector(".p-time").textContent = now ? `${clock(t)} / ${clock(d)}` : "";
+    if (now && "mediaSession" in navigator && navigator.mediaSession.setPositionState && isFinite(audio.duration)) {
+      try { navigator.mediaSession.setPositionState({ duration: audio.duration, position: Math.min(t, audio.duration), playbackRate: 1 }); } catch (e) {}
+    }
+  }
+
+  // the bar shows while something is loaded, unless its own panel is open on screen
+  const bar = document.getElementById("now-bar");
+  bar.querySelector('[data-act="next"]').innerHTML = ICON.next;
+  bar.querySelector('[data-act="stop"]').innerHTML = ICON.stop;
+  const dock = document.getElementById("dock");
+  function updateBar() {
+    const panelOpen = now && [...players].some(el => el.isConnected && el.dataset.slug === now.r.slug && onScreen.has(el));
+    const show = !!now && !panelOpen;
+    const wasOn = dock.classList.contains("on");
+    dock.classList.toggle("on", !!now);
+    if (!!now !== wasOn) requestAnimationFrame(drawWave);
+    bar.classList.toggle("show", show);
+    const btn = bar.querySelector('[data-act="toggle"]');
+    btn.innerHTML = now && !audio.paused ? ICON.pause : ICON.play;
+    if (now) bar.querySelector(".what").innerHTML =
+      `${esc(now.entry.tracks[now.i].title)} <span>· ${esc(String(now.r.title).trim())}</span>`;
+  }
+  bar.addEventListener("click", e => {
+    const act = e.target.closest("[data-act]")?.dataset.act;
+    if (act === "toggle") toggle();
+    else if (act === "next") step(1);
+    else if (act === "stop") stop();
+    else if (act === "show" && now) {               // jump to the release and open its panel
+      history.pushState(null, "", location.pathname + location.search + "#/" + now.r.slug);
+      route(false);
+    }
+  });
+
+  // ── Waveform (shapes come from peaks.js, made from your MP3s) ──
+  const wave = document.getElementById("wave");
+  const wctx = wave.getContext("2d");
+  let hoverX = -1;
+  function peaksFor() {
+    if (!now || typeof PEAKS === "undefined") return null;
+    const p = PEAKS[now.entry.folder + "/" + now.entry.tracks[now.i].file];
+    return p ? [...p].map(c => parseInt(c, 36) / 35) : null;
+  }
+  let peakCache = { key: null, vals: null };
+  function drawWave() {
+    if (!dock.classList.contains("on")) return;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const w = wave.clientWidth, h = wave.clientHeight;
+    if (!w) return;
+    if (wave.width !== Math.round(w * dpr) || wave.height !== Math.round(h * dpr)) {
+      wave.width = Math.round(w * dpr); wave.height = Math.round(h * dpr);
+    }
+    const key = now ? now.entry.folder + "/" + now.entry.tracks[now.i].file : null;
+    if (peakCache.key !== key) peakCache = { key, vals: peaksFor() };
+    const vals = peakCache.vals;
+    const d = now ? (isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration) : 0;
+    const prog = d ? Math.min(1, audio.currentTime / d) : 0;
+    wctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    wctx.clearRect(0, 0, w, h);
+    const n = vals ? vals.length : 120;
+    const step = w / n, bw = Math.max(1, step * 0.55), mid = h / 2;
+    for (let k = 0; k < n; k++) {
+      const v = vals ? Math.max(0.06, vals[k]) : 0.06;
+      const bh = v * (h - 2);
+      const x = k * step + (step - bw) / 2;
+      const played = (k + 0.5) / n <= prog;
+      wctx.fillStyle = played ? "#e6e6e6" : "rgba(255,255,255,0.22)";
+      wctx.fillRect(x, mid - bh / 2, bw, bh);
+    }
+    if (hoverX >= 0) {                                  // where a click would jump to
+      wctx.fillStyle = "rgba(255,255,255,0.7)";
+      wctx.fillRect(Math.round(hoverX), 0, 1, h);
+    }
+  }
+  function waveSeek(x) {
+    if (!now || !isFinite(audio.duration)) return;
+    const b = wave.getBoundingClientRect();
+    audio.currentTime = Math.min(Math.max((x - b.left) / b.width, 0), 1) * audio.duration;
+    updateProgress();
+  }
+  let waveDrag = false;
+  wave.addEventListener("pointerdown", e => { waveDrag = true; wave.setPointerCapture(e.pointerId); waveSeek(e.clientX); });
+  wave.addEventListener("pointermove", e => {
+    hoverX = e.clientX - wave.getBoundingClientRect().left;
+    if (waveDrag) waveSeek(e.clientX); else drawWave();
+  });
+  wave.addEventListener("pointerup", () => { waveDrag = false; });
+  wave.addEventListener("pointercancel", () => { waveDrag = false; });
+  wave.addEventListener("pointerleave", () => { hoverX = -1; drawWave(); });
+  addEventListener("resize", () => requestAnimationFrame(drawWave));
+
+  // keyboard / lock-screen media controls
+  function setMediaSession() {
+    if (!("mediaSession" in navigator) || !now) return;
+    const art = new URL(artFor(now.r), location.href).href;
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: now.entry.tracks[now.i].title, artist: "cnicoj", album: String(now.r.title).trim(),
+      artwork: [{ src: art, sizes: "600x600" }]
+    });
+  }
+  if ("mediaSession" in navigator) {
+    const ms = navigator.mediaSession, on = (a, f) => { try { ms.setActionHandler(a, f); } catch (e) {} };
+    on("play", () => audio.play().catch(() => {}));
+    on("pause", () => audio.pause());
+    on("previoustrack", () => step(-1));
+    on("nexttrack", () => step(1));
+    on("seekto", d => { if (d.seekTime != null) audio.currentTime = d.seekTime; });
+  }
+
+  // space bar plays/pauses (unless you're on a button or typing)
+  document.addEventListener("keydown", e => {
+    if (e.code !== "Space" || !now) return;
+    if (e.target.closest("button, a, input, textarea, [role=slider]")) return;
+    e.preventDefault(); toggle();
+  });
+
+  function openItem(item) {
+    const r = bySlug[item.dataset.slug];
+    const hasAudio = !!tracksFor(r);
+    const embed = !hasAudio && r && parseEmbed(r.bandcamp);
+    if (!hasAudio && !embed) return false;
+    item.querySelector(".embed.leaving")?.remove();
+    const box = document.createElement("div");
+    box.className = "embed";
+    if (hasAudio) {
+      box.innerHTML = `<div class="embed-inner"></div>`;
+      box.firstElementChild.appendChild(buildPlayer(r));
+      item.appendChild(box);
+      item.classList.add("open");
+      item.querySelector(".card").setAttribute("aria-expanded", "true");
+      return true;
+    }
+    box.innerHTML = `<div class="embed-inner"><iframe src="${esc(embed.src)}" style="width:${esc(embed.width)};height:${esc(embed.height)}"
+      seamless allow="autoplay" title="${esc(r.title)} on Bandcamp"></iframe></div>`;
+    // The tracklist fades in once Bandcamp has loaded it (with a fallback in case "load" is missed).
+    const frame = box.querySelector("iframe");
+    const reveal = () => frame.classList.add("loaded");
+    frame.addEventListener("load", () => setTimeout(reveal, 120));
+    setTimeout(reveal, 2500);
+    item.appendChild(box);
+    item.classList.add("open");
+    item.querySelector(".card").setAttribute("aria-expanded", "true");
+    return true;
+  }
+
+  function closeItem(item) {
+    item.classList.remove("open");
+    item.querySelector(".card").setAttribute("aria-expanded", "false");
+    const box = item.querySelector(".embed:not(.leaving)");
+    if (!box) return;
+    if (!MOTION) { box.remove(); return; }
+    box.classList.add("leaving");
+    setTimeout(() => { box.remove(); update(); }, 400); // music keeps playing; the bar takes over
+  }
+
+  // ── Keeping the opened release in its own row ──
+  // Rows are worked out as they look with nothing open. The opened release's row is
+  // allowed to grow wider than usual (up to the screen width) so its player fits
+  // right there, and the row stays centered. Only if the screen is too narrow do the
+  // tiles after it move down to the next row.
+
+  // Width of a group's block: as many whole columns as fit, so every group shares
+  // the same left edge and the block sits in the middle of the page.
+  function blockWidth(grid) {
+    const ms = getComputedStyle(main);
+    const natural = main.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    const tile = [...grid.querySelectorAll(":scope > .item")].find(i => !i.classList.contains("open"));
+    const w = tile ? tile.offsetWidth : 228;
+    const perRow = Math.max(1, Math.floor((natural + gap) / (w + gap)));
+    return perRow * (w + gap) - gap;
+  }
+
+  function sizeGrid(grid) {
+    if (innerWidth <= 640) { grid.style.removeProperty("width"); return; } // phones: two columns fill the width
+    grid.style.width = blockWidth(grid) + "px";
+  }
+  function sizeGrids() {
+    main.querySelectorAll(".grid").forEach(g => { if (!g.querySelector(".item.open")) sizeGrid(g); });
+    // the header uses the same width, so the logo lines up with the covers
+    const g = main.querySelector("section:not([hidden]) .grid");
+    if (g && !g.querySelector(".item.open") && g.offsetWidth)
+      document.documentElement.style.setProperty("--block-w", g.offsetWidth + "px");
+  }
+
+  function clearRows(grid) {
+    grid.querySelectorAll(":scope > .row-break").forEach(b => b.remove());
+    grid.style.removeProperty("margin-left");
+    sizeGrid(grid);
+  }
+
+  function layoutRows(item) {
+    if (innerWidth <= 640) return; // phones: the player opens under the cover instead
+    const grid = item.parentElement;
+    clearRows(grid);
+    const items = [...grid.querySelectorAll(":scope > .item")];
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    const w = items.find(i => i !== item)?.offsetWidth || item.querySelector(".card").offsetWidth;
+    const panel = item.querySelector(".embed:not(.leaving) .embed-inner > *");
+    const playerW = panel ? panel.offsetWidth : PLAYER_WIDTH;
+
+    const ms = getComputedStyle(main);
+    const natural = main.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+    const perRow = Math.max(1, Math.floor((natural + gap) / (w + gap)));
+    const room = document.documentElement.clientWidth - 32;
+
+    const width = row => row.reduce((sum, it) => sum + w + (it === item ? gap + playerW : 0), 0) + gap * (row.length - 1);
+    const chunk = list => { const out = []; for (let i = 0; i < list.length; i += perRow) out.push(list.slice(i, i + perRow)); return out; };
+
+    const idx = items.indexOf(item);
+    const start = Math.floor(idx / perRow) * perRow;
+    let row = items.slice(start, start + perRow);
+    const before = [];
+    while (width(row) > room && row[row.length - 1] !== item) row.pop();     // push later tiles down
+    while (width(row) > room && row[0] !== item) before.push(row.shift());   // last resort on narrow screens
+    const after = items.slice(items.indexOf(row[row.length - 1]) + 1);
+
+    const rows = [...chunk(items.slice(0, start)), ...(before.length ? [before] : []), row, ...chunk(after)];
+    rows.slice(0, -1).forEach(r => {
+      const br = document.createElement("div");
+      br.className = "row-break";
+      r[r.length - 1].after(br);
+    });
+
+    // The block grows to fit the widest row (the one with the player), stays centered,
+    // and the covers keep starting from its left edge.
+    const gridW = Math.max(blockWidth(grid), ...rows.map(width));
+    grid.style.width = gridW + "px";
+    grid.style.marginLeft = `calc(50% - ${gridW / 2}px)`;
+  }
+
+  function setOpen(item) {
+    const prev = current;
+    if (prev === item) return;
+    slide(() => {
+      if (prev) { closeItem(prev); clearRows(prev.parentElement); }
+      current = item && openItem(item) ? item : null;
+      if (current) layoutRows(current);
+    }, item || prev);
+    history.replaceState(null, "", location.pathname + location.search + (current ? "#/" + current.dataset.slug : tabHash(tab)));
+    if (!current) setTimeout(alignLabels, MOVE_MS + 50);
+
+    // Phones: the player opens under the cover, so bring it into view if it landed off screen.
+    if (current && innerWidth <= 640) {
+      const box = current.getBoundingClientRect();
+      if (box.bottom > innerHeight || box.top < 0) {
+        scrollTo({ top: scrollY + box.top - 24, behavior: MOTION ? "smooth" : "auto" });
+      }
+    }
+  }
+
+  // Clicking a cover jumps down to that release's full player (in the same group).
+  function jumpTo(section, slug, smooth = true) {
+    const art = section && section.querySelector(`.release-full[data-slug="${CSS.escape(slug)}"]`);
+    if (!art) return false;
+    art.scrollIntoView({ behavior: smooth && MOTION ? "smooth" : "auto", block: "start" });
+    art.classList.remove("flash"); void art.offsetWidth; art.classList.add("flash");
+    setTimeout(() => art.classList.remove("flash"), 1400);
+    return true;
+  }
+  main.addEventListener("click", e => {
+    const card = e.target.closest(".card");
+    if (!card || card.disabled) return;
+    const item = card.closest(".item");
+    jumpTo(item.closest("section"), item.dataset.slug);
+  });
+
+  // Clicking empty space closes it (clicks inside the player don't).
+  // (uses the click's original path, since the player can redraw the clicked button mid-click)
+  document.addEventListener("click", e => {
+    if (!current) return;
+    const inside = e.composedPath().some(n => n.classList && (n.classList.contains("card") || n.classList.contains("embed") || n.id === "now-bar"));
+    if (!inside) setOpen(null);
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && current) setOpen(null); });
+
+  let resizeTimer;
+  addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (!current) return;
+      clearRows(current.parentElement);
+      layoutRows(current);
+    }, 100);
+  });
+
+  // ── Background readout ─────────────────
+  // x/y follow the cursor in a coordinate system with the origin at the middle of the
+  // screen and the edges at ±π. Below that, details read from the visitor's own browser.
+  // All of it stays on their screen; nothing is sent anywhere.
+  (function readout() {
+    const elXY = document.getElementById("ro-xy");
+    const info = document.getElementById("ro-info");
+    const fmt = v => (Object.is(v, -0) ? 0 : v).toFixed(5);
+
+    let px = innerWidth / 2, py = innerHeight / 2, dirty = true;
+    addEventListener("pointermove", e => { px = e.clientX; py = e.clientY; dirty = true; }, { passive: true });
+    addEventListener("pointerdown", e => { px = e.clientX; py = e.clientY; dirty = true; }, { passive: true });
+
+    const ua = navigator.userAgent;
+    const browser = (() => {
+      const tests = [["Firefox", /Firefox\/(\d+)/], ["Edge", /Edg\/(\d+)/], ["Opera", /OPR\/(\d+)/],
+                     ["Chrome", /Chrome\/(\d+)/], ["Safari", /Version\/(\d+).*Safari/]];
+      for (const [name, re] of tests) { const m = ua.match(re); if (m) return name + " " + m[1]; }
+      return "unknown";
+    })();
+    const os =
+      /Windows/.test(ua) ? "Windows" : /Android/.test(ua) ? "Android" : /iPhone|iPad|iPod/.test(ua) ? "iOS" :
+      /Mac OS X/.test(ua) ? "macOS" : /CrOS/.test(ua) ? "ChromeOS" : /Linux/.test(ua) ? "Linux" : "unknown";
+    let tz = "unknown"; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || tz; } catch (e) {}
+
+    // measure the display's refresh rate
+    let fps = 0, frames = 0, since = performance.now();
+
+    function infoRows() {
+      const now = new Date();
+      const pad = n => String(n).padStart(2, "0");
+      const scrollMax = document.documentElement.scrollHeight - innerHeight;
+      return [
+        ["screen", `${screen.width}×${screen.height} @${(devicePixelRatio || 1).toFixed(2)}x`],
+        ["window", `${innerWidth}×${innerHeight}`],
+        ["browser", browser],
+        ["system", os],
+        ["cores", String(navigator.hardwareConcurrency || "?")],
+        ["refresh", fps ? fps + " hz" : "…"],
+        ["lang", navigator.language || "?"],
+        ["zone", tz],
+        ["time", `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`],
+        ["scroll", (scrollMax > 0 ? Math.round(scrollY / scrollMax * 100) : 0) + "%"],
+      ].map(([k, v]) => `${k} = ${v}`);
+    }
+
+    let lastInfo = "";
+    function frame(now) {
+      frames++;
+      if (now - since >= 1000) { fps = Math.round(frames * 1000 / (now - since)); frames = 0; since = now; }
+      if (dirty) {
+        const x = (px / innerWidth - 0.5) * 2 * Math.PI;
+        const y = (0.5 - py / innerHeight) * 2 * Math.PI;      // up is positive
+        elXY.textContent = fmt(x) + ", " + fmt(y);
+        dirty = false;
+      }
+      const rows = infoRows();
+      const html = rows.map(r => `<span>${r.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]))}</span>`).join("");
+      if (html !== lastInfo) { info.innerHTML = html; lastInfo = html; }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  // ── Background: morphing logo ──────────
+  // Your logo sits large on the right, perfectly still. Only while the cursor moves over
+  // it does the nearby part get dragged along like something soft and liquid, with a
+  // small ripple; when the cursor stops or leaves, it springs back to its exact shape.
+  (function background() {
+    const LOGO_ALPHA  = 0.17;  // how bold the logo is (0 = invisible, 1 = solid white)
+    const REACH       = 260;   // how far from the cursor the logo reacts (px)
+    const DRAG        = 4.0;   // how much the logo gets dragged by cursor movement
+    const RIPPLE      = 5.0;   // ripple strength near the cursor while it moves (px)
+
+    const wrap = document.getElementById("bg");
+    const canvas = document.getElementById("bg-canvas");
+    const fallback = document.getElementById("bg-logo");
+
+    let mx = -9999, my = -9999, lx = mx, ly = my;  // cursor, and the eased point that follows it
+    let vx = 0, vy = 0;                            // eased cursor velocity (drives the drag)
+    let hasMouse = false, over = 0, overTarget = 0;   // is the cursor over the logo (eased)
+    let box = null;                                   // the logo's position and size on screen
+    addEventListener("pointermove", e => {
+      if (e.pointerType !== "mouse") return;      // phones/tablets: the logo just stays still
+      if (!hasMouse) { hasMouse = true; lx = e.clientX; ly = e.clientY; }
+      mx = e.clientX; my = e.clientY;
+    }, { passive: true });
+    document.documentElement.addEventListener("mouseleave", () => { mx = my = -9999; });
+
+    let pmx = 0, pmy = 0, first = true;
+    function ease() {
+      if (hasMouse) {
+        if (first) { pmx = mx; pmy = my; first = false; }
+        const dx = mx - pmx, dy = my - pmy; pmx = mx; pmy = my;
+        vx += (dx - vx) * 0.18; vy += (dy - vy) * 0.18;   // follows the movement…
+        vx *= 0.94; vy *= 0.94;                             // …and settles back when it stops
+        const sp = Math.hypot(vx, vy), MAXV = 25;           // cap so fast flicks can't tear it apart
+        if (sp > MAXV) { vx *= MAXV / sp; vy *= MAXV / sp; }
+        lx += (mx - lx) * 0.2; ly += (my - ly) * 0.2;
+      }
+      // only react while the cursor is over the logo (inside its outer ring)
+      overTarget = box && Math.hypot(mx - box.x, my - box.y) < box.size / 2 + 8 ? 1 : 0;
+      over += (overTarget - over) * 0.12;
+    }
+
+    function logoBox() {
+      const cs = getComputedStyle(fallback);
+      return { size: parseFloat(cs.width), x: parseFloat(cs.left) + parseFloat(cs.width) / 2, y: parseFloat(cs.top) + parseFloat(cs.height) / 2 };
+    }
+
+    const gl = window.LOGO_DATA && (canvas.getContext("webgl", { alpha: false, antialias: false, premultipliedAlpha: false })
+            || canvas.getContext("experimental-webgl"));
+
+    if (!gl) {
+      // Fallback: the plain logo image, standing still.
+      canvas.remove();
+      return;
+    }
+
+    const vert = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }`;
+    const frag = `
+      precision highp float;
+      uniform sampler2D uLogo;
+      uniform vec2 uRes, uMouse, uVel, uCenter;
+      uniform float uDpr, uTime, uSize, uAlpha, uReach, uDrag, uRipple, uOver;
+
+      void main(){
+        vec2 p = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y) / uDpr;   // CSS pixels, y down
+        // only work near the logo
+        vec2 rel = p - uCenter;
+        if (max(abs(rel.x), abs(rel.y)) > uSize * 0.5 + 140.0) { gl_FragColor = vec4(vec3(32.0 / 255.0), 1.0); return; }   // page background #202020
+
+        // how close this point is to the cursor (1 at the cursor, fading out by REACH)
+        vec2 toM = p - uMouse;
+        float r = length(toM);
+        float fall = exp(-(r * r) / (uReach * uReach)) * uOver;
+        float moving = clamp(length(uVel) / 6.0, 0.0, 1.0);    // 0 when the cursor is still
+
+        // 1) drag: pull the logo along with the cursor's movement
+        vec2 src = p - uVel * uDrag * fall;
+        // 2) ripple around the cursor
+        src += (r > 0.001 ? toM / r : vec2(0.0)) * sin(r * 0.045 - uTime * 2.4) * uRipple * fall * moving;
+
+        vec2 uv = (src - uCenter) / uSize + 0.5;
+        float a = 0.0;
+        if (uv.x >= 0.0 && uv.y >= 0.0 && uv.x <= 1.0 && uv.y <= 1.0) a = texture2D(uLogo, uv).a;
+        a *= uAlpha;   // same brightness everywhere
+        gl_FragColor = vec4(vec3(32.0 / 255.0) + vec3(a), 1.0);
+      }`;
+
+    function compile(type, src) {
+      const sh = gl.createShader(type); gl.shaderSource(sh, src); gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(sh));
+      return sh;
+    }
+    let prog;
+    try {
+      prog = gl.createProgram();
+      gl.attachShader(prog, compile(gl.VERTEX_SHADER, vert));
+      gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, frag));
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+    } catch (err) {
+      console.warn("Background shader failed, using the plain logo instead:", err);
+      canvas.remove(); return;
+    }
+    gl.useProgram(prog);
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(prog, "p");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    const U = n => gl.getUniformLocation(prog, n);
+    const u = {}; ["uRes","uMouse","uVel","uCenter","uDpr","uTime","uSize","uAlpha","uReach","uDrag","uRipple","uOver"].forEach(n => u[n] = U(n));
+    gl.uniform1f(u.uAlpha, LOGO_ALPHA); gl.uniform1f(u.uReach, REACH); gl.uniform1f(u.uDrag, DRAG);
+    gl.uniform1f(u.uRipple, RIPPLE);
+
+    // Drawing resolution: starts sharp, steps down by itself if a computer can't keep up.
+    const base = Math.min(devicePixelRatio || 1, 1.5);
+    const QUALITY = [base, base * 0.75, base * 0.55];
+    let qi = 0, dpr = 1;
+    function size() {
+      dpr = QUALITY[qi];
+      canvas.width = Math.round(innerWidth * dpr);
+      canvas.height = Math.round(innerHeight * dpr);
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(u.uRes, canvas.width, canvas.height);
+      gl.uniform1f(u.uDpr, dpr);
+      const b = logoBox(); box = b;
+      gl.uniform2f(u.uCenter, b.x, b.y);
+      gl.uniform1f(u.uSize, b.size);
+    }
+
+    const img = new Image();
+    img.onload = () => {
+      const tex = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+      const pow2 = (img.width & (img.width - 1)) === 0 && (img.height & (img.height - 1)) === 0;
+      if (pow2) gl.generateMipmap(gl.TEXTURE_2D);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, pow2 ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      wrap.classList.add("live");
+      size();
+      addEventListener("resize", size);
+
+      const t0 = performance.now();
+      let last = t0, slowFrames = 0, checked = 0;
+      (function frame(now) {
+        const dt = now - last; last = now;
+        if (++checked > 20 && qi < QUALITY.length - 1) {
+          slowFrames = dt > 26 ? slowFrames + 1 : Math.max(0, slowFrames - 1);
+          if (slowFrames > 20) { qi++; size(); slowFrames = 0; checked = 0; }
+        }
+        ease();
+        gl.uniform1f(u.uTime, (now - t0) / 1000);
+        gl.uniform2f(u.uMouse, lx, ly);
+        gl.uniform2f(u.uVel, vx, vy);
+        gl.uniform1f(u.uOver, over);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        requestAnimationFrame(frame);
+      })(t0);
+    };
+    img.onerror = () => canvas.remove();   // keep the plain logo image
+    img.src = window.LOGO_DATA;
+  })();
+
+  render();
+  sizeGrids();
+
+  // ── One shared title size: the largest size at which every title fits on one line ──
+  function fitTitles() {
+    const MAX = 14, MIN = 9.5;
+    const titles = [...main.querySelectorAll(".card .title")];
+    if (!titles.length) return;
+    // every cover is the same width, so measure one that's on screen and fit all titles to it
+    const shown = main.querySelector("section:not([hidden]) .item:not(.open) .card") || main.querySelector("section:not([hidden]) .card");
+    const room = shown ? shown.clientWidth : 0;
+    if (!room) return;
+    const cs = getComputedStyle(titles[0]);
+    const ctx = fitTitles.ctx || (fitTitles.ctx = document.createElement("canvas").getContext("2d"));
+    let size = MAX;
+    for (const t of titles) {
+      ctx.font = `${cs.fontWeight} ${MAX}px ${cs.fontFamily}`;
+      const w = ctx.measureText(t.textContent).width;
+      size = Math.min(size, MAX * (room - 2) / w);
+    }
+    size = Math.floor(size * 4) / 4;              // quarter-pixel steps
+    const wrap = size < MIN;                      // too small to read: allow two lines instead
+    main.classList.toggle("titles-wrap", wrap);
+    main.style.setProperty("--title-size", (wrap ? 12 : size) + "px");
+  }
+  fitTitles();
+
+  // ── Line up each group heading with the left edge of its first row of covers ──
+  function alignLabels() {
+    if (current) return;                      // leave headings still while a release is open
+    for (const section of main.querySelectorAll("section")) {
+      const label = section.querySelector(".label");
+      const first = section.querySelector(".item");
+      if (!label || !first) continue;
+      label.style.setProperty("--label-indent", "0px");
+      const indent = Math.max(0, first.offsetLeft - label.offsetLeft);
+      label.style.setProperty("--label-indent", indent + "px");
+    }
+  }
+  alignLabels();
+  document.fonts && document.fonts.ready.then(() => { fitTitles(); alignLabels(); });
+  let alignTimer;
+  addEventListener("resize", () => { clearTimeout(alignTimer); alignTimer = setTimeout(() => { sizeGrids(); fitTitles(); alignLabels(); }, 120); });
+
+  // ── Footer ─────────────────────────────
+  // Links come from LINKS in releases.js. Until a link is filled in, clicking it does nothing.
+  (function footer() {
+    const links = typeof LINKS !== "undefined" ? LINKS : {};
+    for (const name of ["youtube", "instagram"]) {
+      const a = document.getElementById("link-" + name);
+      if (links[name]) a.href = links[name];
+      else a.addEventListener("click", e => e.preventDefault());
+    }
+    // Reveal only when scrolled to the very bottom (or if the page is too short to scroll).
+    const el = document.getElementById("site-footer");
+    let ticking = false;
+    function check() {
+      ticking = false;
+      const atBottom = scrollY + innerHeight >= document.documentElement.scrollHeight - 4;
+      el.classList.toggle("show", atBottom);
+    }
+    const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } };
+    addEventListener("scroll", queue, { passive: true });
+    addEventListener("resize", queue);
+    new ResizeObserver(queue).observe(document.body);   // e.g. when a release opens and the page grows
+    queue();
+  })();
+
+  // ── Tabs ───────────────────────────────
+  // The logo shows New Releases (home); Albums, EPs and Singles each get their own page.
+  // Addresses: (none) = home, #albums, #eps, #singles. A shared release link (#/release-name)
+  // opens its page with that release already open.
+  const TAB_HASH = { new: "", album: "albums", ep: "eps", single: "singles" };
+  const header = document.getElementById("site-header");
+  let tab = "new";
+
+  function tabHash(t) { return TAB_HASH[t] ? "#" + TAB_HASH[t] : ""; }
+  function tabFromHash(h) {
+    h = h.replace(/^#/, "");
+    for (const [t, name] of Object.entries(TAB_HASH)) if (name && h === name) return t;
+    return null;
+  }
+  function hasTab(t) { return !!main.querySelector(`section[data-type="${t}"]`); }
+
+  function showTab(t, { push = false, scroll = true } = {}) {
+    if (!hasTab(t)) t = ["new", "album", "ep", "single"].find(hasTab) || t;
+    if (current) { closeItem(current); clearRows(current.parentElement); current = null; }
+    const changed = t !== tab || !header.dataset.ready;
+    tab = t; header.dataset.ready = "1";
+    main.querySelectorAll("section").forEach(sec => { sec.hidden = sec.dataset.type !== t; });
+    header.querySelectorAll("[data-tab]").forEach(a => {
+      if (a.dataset.tab === t) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    if (push) history.pushState(null, "", location.pathname + location.search + tabHash(t));
+    sizeGrids(); fitTitles(); alignLabels();
+    if (scroll) scrollTo(0, 0);
+    const sec = main.querySelector(`section[data-type="${t}"]`);
+    if (changed && sec && MOTION) sec.animate(
+      [{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }],
+      { duration: 380, easing: "cubic-bezier(.22,.8,.24,1)" });
+  }
+
+  header.addEventListener("click", e => {
+    const a = e.target.closest("[data-tab]");
+    if (!a) return;
+    e.preventDefault();
+    if (a.dataset.tab === tab && !current) { scrollTo({ top: 0, behavior: "smooth" }); return; }
+    showTab(a.dataset.tab, { push: true });
+  });
+
+  // a thin line under the header once the page has scrolled
+  addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 4), { passive: true });
+
+  function route(first) {
+    const h = location.hash;
+    if (h.startsWith("#/")) {
+      const slug = decodeURIComponent(h.slice(2));
+      const r = bySlug[slug];
+      // open it on its own page (Albums/EPs/Singles), not the New Releases copy
+      const section = r && main.querySelector(`section[data-type="${r.type}"]`);
+      if (section && section.querySelector(`.release-full[data-slug="${CSS.escape(slug)}"]`)) {
+        showTab(r.type, { scroll: false });
+        requestAnimationFrame(() => jumpTo(section, slug, !first));
+        return;
+      }
+      history.replaceState(null, "", location.pathname + location.search);
+      showTab("new", { scroll: !first });
+      return;
+    }
+    const t = tabFromHash(h);
+    if (h && !t) history.replaceState(null, "", location.pathname + location.search);
+    showTab(t || "new", { scroll: !first });
+  }
+  route(true);
+  addEventListener("popstate", () => route(false));
+
+})();
+</script>
+</body>
+</html>
