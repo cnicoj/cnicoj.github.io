@@ -867,6 +867,8 @@
     const entry = tracksFor(r);
     if (!entry || !entry.tracks[i]) return;
     now = { r, entry, i };
+    failed.delete(r.slug + ":" + i);
+    retries = 0; previewT = null; pendingSeek = null;
     audio.src = trackUrl(entry, entry.tracks[i]);
     audio.play().catch(() => {});
     setMediaSession();
@@ -878,10 +880,10 @@
   }
   function step(d) {
     if (!now) return;
-    if (d < 0 && audio.currentTime > 3) { audio.currentTime = 0; return; }
+    if (d < 0 && audio.currentTime > 3) { seekTo(0); return; }
     const j = now.i + d;
     if (j >= 0 && j < now.entry.tracks.length) play(now.r, j);
-    else if (d < 0) audio.currentTime = 0;
+    else if (d < 0) seekTo(0);
   }
   function stop() {
     audio.pause();
@@ -895,16 +897,51 @@
     if (now && now.i + 1 < now.entry.tracks.length) play(now.r, now.i + 1);
     else { audio.currentTime = 0; update(); }       // end of the release: stop at the start
   });
+  // a hiccup while seeking can make the browser give up on the file; reload it at the
+  // same spot a couple of times before calling the track broken
+  let retries = 0, lastGood = 0;
   audio.addEventListener("error", () => {
     if (!now || !audio.getAttribute("src")) return;
+    if (retries < 2) {
+      retries++;
+      const at = pendingSeek ?? lastGood, src = audio.getAttribute("src");
+      pendingSeek = null;
+      audio.src = src;
+      audio.addEventListener("loadedmetadata", () => { try { audio.currentTime = at; } catch (e) {} }, { once: true });
+      audio.play().catch(() => {});
+      return;
+    }
     failed.add(now.r.slug + ":" + now.i);
     update();
   });
+  audio.addEventListener("playing", () => { retries = 0; });
+
+  // one seek at a time: while the browser is still busy with a seek, newer requests
+  // just replace the waiting one instead of piling up (piling up is what made sound drop out)
+  let pendingSeek = null, previewT = null;
+  function seekTo(t) {
+    if (!now) return;
+    const d = isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration;
+    t = Math.min(Math.max(t, 0), Math.max(0, (d || 0) - 0.05));
+    if (audio.seeking || audio.readyState < 1) { pendingSeek = t; updateProgress(); return; }
+    pendingSeek = null;
+    audio.currentTime = t;
+    updateProgress();
+  }
+  audio.addEventListener("seeked", () => {
+    if (pendingSeek != null) { const t = pendingSeek; pendingSeek = null; audio.currentTime = t; }
+  });
+  audio.addEventListener("loadedmetadata", () => {
+    if (pendingSeek != null) { const t = pendingSeek; pendingSeek = null; audio.currentTime = t; }
+  });
+  // where the playhead should be drawn: under the finger while dragging, else the real position
+  const pos = () => previewT ?? pendingSeek ?? audio.currentTime;
   ["play", "pause", "loadedmetadata", "durationchange"].forEach(ev => audio.addEventListener(ev, update));
   let tickQueued = false;
   audio.addEventListener("timeupdate", () => {
     if (tickQueued) return;
     tickQueued = true;
+    if (!audio.seeking) lastGood = audio.currentTime;
     requestAnimationFrame(() => { tickQueued = false; updateProgress(); });
   });
 
@@ -950,20 +987,32 @@
 
     // seeking: click or drag along the line (and arrow keys when it's focused)
     const seek = el.querySelector(".p-seek");
-    const seekTo = x => {
-      if (!mine() || !isFinite(audio.duration)) return;
+    const at = x => {
       const b = seek.getBoundingClientRect();
-      audio.currentTime = Math.min(Math.max((x - b.left) / b.width, 0), 1) * audio.duration;
-      updateProgress();
+      const d = isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration;
+      return Math.min(Math.max((x - b.left) / b.width, 0), 1) * d;
     };
-    seek.addEventListener("pointerdown", e => { seek.setPointerCapture(e.pointerId); seek.classList.add("dragging"); seekTo(e.clientX); });
-    seek.addEventListener("pointermove", e => { if (seek.classList.contains("dragging")) seekTo(e.clientX); });
-    const endDrag = () => seek.classList.remove("dragging");
-    seek.addEventListener("pointerup", endDrag); seek.addEventListener("pointercancel", endDrag);
+    seek.addEventListener("pointerdown", e => {
+      if (!mine()) return;
+      seek.setPointerCapture(e.pointerId); seek.classList.add("dragging");
+      previewT = at(e.clientX); updateProgress();
+    });
+    seek.addEventListener("pointermove", e => {
+      if (!seek.classList.contains("dragging") || !mine()) return;
+      previewT = at(e.clientX); updateProgress();
+    });
+    const endDrag = commit => {
+      if (!seek.classList.contains("dragging")) return;
+      seek.classList.remove("dragging");
+      const t = previewT; previewT = null;
+      if (commit && t != null && mine()) seekTo(t); else updateProgress();
+    };
+    seek.addEventListener("pointerup", () => endDrag(true));
+    seek.addEventListener("pointercancel", () => endDrag(false));
     seek.addEventListener("keydown", e => {
       if (!mine()) return;
-      if (e.key === "ArrowRight") { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5); e.preventDefault(); }
-      if (e.key === "ArrowLeft")  { audio.currentTime = Math.max(0, audio.currentTime - 5); e.preventDefault(); }
+      if (e.key === "ArrowRight") { seekTo(pos() + 5); e.preventDefault(); }
+      if (e.key === "ArrowLeft")  { seekTo(pos() - 5); e.preventDefault(); }
     });
 
     players.add(el);
@@ -998,7 +1047,7 @@
 
   function updateProgress() {
     const d = now ? (isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration) : 0;
-    const t = now ? audio.currentTime : 0;
+    const t = now ? pos() : 0;
     const p = d ? Math.min(100, t / d * 100) + "%" : "0%";
     for (const el of players) {
       if (!el.isConnected) continue;
@@ -1010,7 +1059,7 @@
     drawWave();
     bar.querySelector(".p-time").textContent = now ? `${clock(t)} / ${clock(d)}` : "";
     if (now && "mediaSession" in navigator && navigator.mediaSession.setPositionState && isFinite(audio.duration)) {
-      try { navigator.mediaSession.setPositionState({ duration: audio.duration, position: Math.min(t, audio.duration), playbackRate: 1 }); } catch (e) {}
+      try { navigator.mediaSession.setPositionState({ duration: audio.duration, position: Math.min(audio.currentTime, audio.duration), playbackRate: 1 }); } catch (e) {}
     }
   }
 
@@ -1064,7 +1113,7 @@
     if (peakCache.key !== key) peakCache = { key, vals: peaksFor() };
     const vals = peakCache.vals;
     const d = now ? (isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration) : 0;
-    const prog = d ? Math.min(1, audio.currentTime / d) : 0;
+    const prog = d ? Math.min(1, pos() / d) : 0;
     wctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     wctx.clearRect(0, 0, w, h);
     const n = vals ? vals.length : 120;
@@ -1082,20 +1131,28 @@
       wctx.fillRect(Math.round(hoverX), 0, 1, h);
     }
   }
-  function waveSeek(x) {
-    if (!now || !isFinite(audio.duration)) return;
+  function waveAt(x) {
     const b = wave.getBoundingClientRect();
-    audio.currentTime = Math.min(Math.max((x - b.left) / b.width, 0), 1) * audio.duration;
-    updateProgress();
+    const d = isFinite(audio.duration) ? audio.duration : now.entry.tracks[now.i].duration;
+    return Math.min(Math.max((x - b.left) / b.width, 0), 1) * d;
   }
   let waveDrag = false;
-  wave.addEventListener("pointerdown", e => { waveDrag = true; wave.setPointerCapture(e.pointerId); waveSeek(e.clientX); });
+  wave.addEventListener("pointerdown", e => {
+    if (!now) return;
+    waveDrag = true; wave.setPointerCapture(e.pointerId);
+    previewT = waveAt(e.clientX); updateProgress();
+  });
   wave.addEventListener("pointermove", e => {
     hoverX = e.clientX - wave.getBoundingClientRect().left;
-    if (waveDrag) waveSeek(e.clientX); else drawWave();
+    if (waveDrag && now) { previewT = waveAt(e.clientX); updateProgress(); } else drawWave();
   });
-  wave.addEventListener("pointerup", () => { waveDrag = false; });
-  wave.addEventListener("pointercancel", () => { waveDrag = false; });
+  wave.addEventListener("pointerup", () => {
+    if (!waveDrag) return;
+    waveDrag = false;
+    const t = previewT; previewT = null;
+    if (t != null && now) seekTo(t); else updateProgress();
+  });
+  wave.addEventListener("pointercancel", () => { waveDrag = false; previewT = null; updateProgress(); });
   wave.addEventListener("pointerleave", () => { hoverX = -1; drawWave(); });
   addEventListener("resize", () => requestAnimationFrame(drawWave));
 
@@ -1114,7 +1171,7 @@
     on("pause", () => audio.pause());
     on("previoustrack", () => step(-1));
     on("nexttrack", () => step(1));
-    on("seekto", d => { if (d.seekTime != null) audio.currentTime = d.seekTime; });
+    on("seekto", d => { if (d.seekTime != null) seekTo(d.seekTime); });
   }
 
   // space bar plays/pauses (unless you're on a button or typing)
