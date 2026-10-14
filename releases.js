@@ -168,4 +168,4 @@ const LINKS = {
   Once the files are on Cloudflare R2, change it to your bucket's address, e.g.
   "https://audio.yourdomain.com/" (keep the slash at the end).
 */
-const AUDIO_BASE = "audio/";
+const AUDIO_BASE = "https://music.cnicoj.com/";
