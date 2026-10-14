@@ -901,17 +901,24 @@
   // same spot a couple of times before calling the track broken
   let retries = 0, lastGood = 0;
   audio.addEventListener("error", () => {
-    if (!now || !audio.getAttribute("src")) return;
-    if (retries < 2) {
-      retries++;
-      const at = pendingSeek ?? lastGood, src = audio.getAttribute("src");
+    const src = audio.getAttribute("src");
+    if (!now || !src) return;
+    const code = audio.error && audio.error.code;
+    if (!audio.error || code === 1) return;          // stale event from an earlier load, or a cancelled load (skipping): not a fault
+    const mine = now, key = now.r.slug + ":" + now.i;
+    if (retries < 3) {                               // wait a moment, then try the same file again from the same spot
+      const at = pendingSeek ?? lastGood;
       pendingSeek = null;
-      audio.src = src;
-      audio.addEventListener("loadedmetadata", () => { try { audio.currentTime = at; } catch (e) {} }, { once: true });
-      audio.play().catch(() => {});
+      const wait = [600, 1500, 3500][retries++];
+      setTimeout(() => {
+        if (now !== mine || audio.getAttribute("src") !== src) return;   // user moved on meanwhile
+        audio.src = src;
+        audio.addEventListener("loadedmetadata", () => { try { audio.currentTime = at; } catch (e) {} }, { once: true });
+        audio.play().catch(() => {});
+      }, wait);
       return;
     }
-    failed.add(now.r.slug + ":" + now.i);
+    failed.add(key);                                 // still clickable: clicking it clears the mark and tries again
     update();
   });
   audio.addEventListener("playing", () => { retries = 0; });
