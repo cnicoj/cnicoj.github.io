@@ -1318,16 +1318,40 @@
     if (current && innerWidth <= 640) {
       const box = current.getBoundingClientRect();
       if (box.bottom > innerHeight || box.top < 0) {
-        scrollTo({ top: scrollY + box.top - 24, behavior: MOTION ? "smooth" : "auto" });
+        glide(scrollY + box.top - 24);
       }
     }
   }
 
   // Clicking a cover jumps down to that release's full player (in the same group).
+  // our own scroll glide: fast start, soft landing; length scales a little with distance.
+  // (the browser's built-in smooth scroll turns instant when Windows animations are off)
+  let glideRaf = 0;
+  function glide(top) {
+    cancelAnimationFrame(glideRaf);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    top = Math.max(0, Math.min(top, max));
+    const from = scrollY, dist = top - from;
+    if (Math.abs(dist) < 2) return;
+    const dur = Math.min(720, 340 + Math.abs(dist) * 0.12);
+    const ease = t => 1 - Math.pow(1 - t, 4);
+    const t0 = performance.now();
+    const stop = () => { cancelAnimationFrame(glideRaf); off(); };
+    const off = () => ["wheel", "touchstart", "keydown", "pointerdown"].forEach(ev => removeEventListener(ev, stop));
+    ["wheel", "touchstart", "keydown", "pointerdown"].forEach(ev => addEventListener(ev, stop, { passive: true }));
+    const frame = now => {
+      const t = Math.min(1, (now - t0) / dur);
+      window.scrollTo(0, from + dist * ease(t));
+      if (t < 1) glideRaf = requestAnimationFrame(frame); else off();
+    };
+    glideRaf = requestAnimationFrame(frame);
+  }
+
   function jumpTo(section, slug, smooth = true) {
     const art = section && section.querySelector(`.release-full[data-slug="${CSS.escape(slug)}"]`);
     if (!art) return false;
-    art.scrollIntoView({ behavior: smooth && MOTION ? "smooth" : "auto", block: "start" });
+    const top = scrollY + art.getBoundingClientRect().top - (parseFloat(getComputedStyle(art).scrollMarginTop) || 0);
+    if (smooth) glide(top); else window.scrollTo(0, top);
     art.classList.remove("flash"); void art.offsetWidth; art.classList.add("flash");
     setTimeout(() => art.classList.remove("flash"), 1400);
     return true;
@@ -1694,7 +1718,7 @@
     const a = e.target.closest("[data-tab]");
     if (!a) return;
     e.preventDefault();
-    if (a.dataset.tab === tab && !current) { scrollTo({ top: 0, behavior: "smooth" }); return; }
+    if (a.dataset.tab === tab && !current) { glide(0); return; }
     showTab(a.dataset.tab, { push: true });
   });
 
