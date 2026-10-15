@@ -6,6 +6,18 @@
 <meta name="theme-color" content="#202020">
 <meta name="color-scheme" content="dark">
 <title>cnicoj.com</title>
+<meta name="description" content="Official cnicoj repository, for music and content.">
+<!-- link previews (Discord, iMessage, X, etc.): site name, title, description, logo on the right -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="cnicoj">
+<meta property="og:title" content="Home">
+<meta property="og:description" content="Official cnicoj repository, for music and content.">
+<meta property="og:url" content="https://cnicoj.com/">
+<meta property="og:image" content="https://cnicoj.com/og-image.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="cnicoj logo">
+<meta name="twitter:card" content="summary">
 
 <style>
   /* Montserrat, bundled with the site (fonts/ folder) so it loads with no outside requests.
@@ -537,7 +549,7 @@
   }
   .site-footer.show { opacity: 1; transform: none; pointer-events: auto; }
   .site-footer .text {
-    text-align: center;
+    text-align: left;
     font-size: 13px;
     line-height: 1.7;
     color: var(--muted);
@@ -554,7 +566,7 @@
   }
   .site-footer .links a:hover,
   .site-footer .links a:focus-visible { text-decoration-color: currentColor; outline: none; }
-  .site-footer .links .sep { color: var(--muted); margin: 0 0.5em; }
+  .site-footer .links a + a { margin-left: 1.1em; }
   .site-footer .icon {
     width: 44px;
     height: 44px;
@@ -655,9 +667,9 @@
 
 <footer class="site-footer" id="site-footer">
   <div class="text">
-    <div>official cnicoj repository for music and content</div>
+    <div>Official cnicoj repository, for music and content.</div>
     <div class="links">
-      <a id="link-youtube" href="#" target="_blank" rel="noopener">youtube</a><span class="sep">-</span><a id="link-instagram" href="#" target="_blank" rel="noopener">instagram</a>
+      <a id="link-youtube" href="#" target="_blank" rel="noopener">youtube</a><a id="link-instagram" href="#" target="_blank" rel="noopener">instagram</a>
     </div>
   </div>
   <img class="icon" src="icon.png" alt="cnicoj">
